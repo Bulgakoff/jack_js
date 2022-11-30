@@ -44,7 +44,7 @@ function reset() {
 function showProductsWithFromPrice() {
     const fromPrice = Number(fromInput.value);
     products.forEach(function (product) {
-        const productPrice = Number(product.querySelector('.price'));
+        const productPrice = Number(product.querySelector('.price').textContent.trim());
         if (productPrice < fromPrice) {
             hideProduct(product);
         } else {
@@ -59,7 +59,7 @@ function showProductsWithFromPrice() {
 function showProductsWithToPrice() {
     const toInput = Number(toInput.value);
     products.forEach(function (product) {
-        const productPrice = Number(product.querySelector('.price'));
+        const productPrice = Number(product.querySelector('.price').textContent.trim());
         if (productPrice > toInput) {
             hideProduct(product);
         } else {
@@ -80,7 +80,7 @@ function showProductsWithBothPrice() {
         return;
     } else {
         products.forEach(function (product) {
-            const productPrice = Number(product.querySelector('.price'));
+            const productPrice = Number(product.querySelector('.price').textContent.trim());
             if (productPrice >= fromPrice && productPrice <= fromPrice) {
                 showProduct(product);
             } else {
