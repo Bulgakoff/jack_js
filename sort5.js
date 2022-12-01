@@ -12,8 +12,8 @@ toInput.addEventListener('change', changedPriceHandler);
 
 
 function changedPriceHandler() {
-    const fromPrice = fromInput.value;
-    const toPrice = toInput.value;
+    const fromPrice = Number(fromInput.value);
+    const toPrice = Number(toInput.value);
 
     if (fromPrice === "" && toPrice === "") {
         reset();
